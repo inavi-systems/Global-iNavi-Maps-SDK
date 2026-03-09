@@ -1,0 +1,898 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name iNaviGlobalMapSDK
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+import CoreGraphics
+import CoreLocation
+import DeveloperToolsSupport
+import Foundation
+import MapLibre
+import Security
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_inheritsConvenienceInitializers public class IgmCircle : iNaviGlobalMapSDK.IgmShape {
+  public var center: _LocationEssentials.CLLocationCoordinate2D? {
+    get
+    set
+  }
+  public var radius: Swift.Double {
+    get
+    set
+  }
+  public var fillColor: UIKit.UIColor {
+    get
+    set
+  }
+  public var strokeWidth: Swift.Double {
+    get
+    set
+  }
+  public var strokeColor: UIKit.UIColor {
+    get
+    set
+  }
+  convenience public init(center: _LocationEssentials.CLLocationCoordinate2D, radius: Swift.Double)
+  convenience public init(center: _LocationEssentials.CLLocationCoordinate2D, radius: Swift.Double, fillColor: UIKit.UIColor)
+  @objc override dynamic public init()
+  public init(center: _LocationEssentials.CLLocationCoordinate2D)
+  @objc deinit
+}
+public protocol IgmImageDelegate : AnyObject {
+  func annotationImageNeedsRedisplay(_ annotationImage: iNaviGlobalMapSDK.IgmImage)
+}
+@objc @_hasMissingDesignatedInitializers public class IgmImage : ObjectiveC.NSObject {
+  final public let image: UIKit.UIImage
+  final public let reuseIdentifier: Swift.String
+  public var isEnabled: Swift.Bool {
+    get
+    set
+  }
+  public class func image(with image: UIKit.UIImage) -> iNaviGlobalMapSDK.IgmImage
+  #if compiler(>=5.3) && $NonescapableTypes
+  public class func image(with image: UIKit.UIImage, reuseIdentifier: Swift.String?) -> iNaviGlobalMapSDK.IgmImage
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public class func image(named name: Swift.String) -> iNaviGlobalMapSDK.IgmImage?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public class func image(named name: Swift.String, reuseIdentifier: Swift.String?) -> iNaviGlobalMapSDK.IgmImage?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public class func image(named name: Swift.String, in bundle: Foundation.Bundle?) -> iNaviGlobalMapSDK.IgmImage?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public class func image(named name: Swift.String, in bundle: Foundation.Bundle?, reuseIdentifier: Swift.String?) -> iNaviGlobalMapSDK.IgmImage?
+  #endif
+  @objc deinit
+}
+extension iNaviGlobalMapSDK.IgmImage {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func resourceImage(named: Swift.String) -> UIKit.UIImage?
+  #endif
+  public static let markerImageBlue: iNaviGlobalMapSDK.IgmImage
+  public static let markerImageGray: iNaviGlobalMapSDK.IgmImage
+  public static let markerImageGreen: iNaviGlobalMapSDK.IgmImage
+  public static let markerImageRed: iNaviGlobalMapSDK.IgmImage
+  public static let markerImageYellow: iNaviGlobalMapSDK.IgmImage
+  public static let locationIconNomal: iNaviGlobalMapSDK.IgmImage
+  public static let locationIconTracking: iNaviGlobalMapSDK.IgmImage
+  public static let locationIconTrackingCompass: iNaviGlobalMapSDK.IgmImage
+}
+@objc @_inheritsConvenienceInitializers public class IgmInfoWindow : iNaviGlobalMapSDK.IgmShape {
+  #if compiler(>=5.3) && $NonescapableTypes
+  override public var mapView: iNaviGlobalMapSDK.IgmMapView? {
+    get
+    set
+  }
+  #endif
+  public var alpha: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  weak public var imageDataSource: (any iNaviGlobalMapSDK.IgmImageDataSource)? {
+    get
+    set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var marker: iNaviGlobalMapSDK.IgmMarker? {
+    get
+    set
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var position: _LocationEssentials.CLLocationCoordinate2D? {
+    get
+    set
+  }
+  #endif
+  public var offset: CoreFoundation.CGPoint {
+    get
+    set
+  }
+  public func invalidate()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias IgmLocationTouchEvent = () -> Swift.Void
+@_hasMissingDesignatedInitializers public class IgmLocationIcon {
+  public var isVisible: Swift.Bool {
+    get
+  }
+  public var image: iNaviGlobalMapSDK.IgmImage? {
+    get
+    set
+  }
+  public var imageTracking: iNaviGlobalMapSDK.IgmImage? {
+    get
+    set
+  }
+  public var imageTrackingCompass: iNaviGlobalMapSDK.IgmImage? {
+    get
+    set
+  }
+  public var scale: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var position: _LocationEssentials.CLLocationCoordinate2D? {
+    get
+  }
+  #endif
+  public var bearing: CoreFoundation.CGFloat {
+    get
+  }
+  public var circleRadius: Swift.Double {
+    get
+    set
+  }
+  public var circleColor: UIKit.UIColor? {
+    get
+    set
+  }
+  public var touchEvent: iNaviGlobalMapSDK.IgmLocationTouchEvent?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class IgmMarker : iNaviGlobalMapSDK.IgmShape, iNaviGlobalMapSDK.IgmMarkerOptions {
+  public var tag: Swift.UInt
+  @objc public var iconImage: iNaviGlobalMapSDK.IgmImage? {
+    @objc get
+    @objc set
+  }
+  @objc public var iconScale: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var title: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc public var isAllowOverlapMarkers: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var isAllowOverlapTitle: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  public var isAllowOverlapSymbols: Swift.Bool {
+    get
+    set
+  }
+  @objc public var isIconFlat: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var isTitleFlat: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var position: _LocationEssentials.CLLocationCoordinate2D {
+    @objc get
+    @objc set
+  }
+  @objc public var alpha: CoreFoundation.CGFloat
+  @objc public var titleColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc public var titleHaloColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc public var titleSize: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var titleMaxWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var titleMargin: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var angle: CoreFoundation.CGFloat
+  @objc public var anchor: CoreFoundation.CGPoint
+  public var infoWindow: iNaviGlobalMapSDK.IgmInfoWindow? {
+    get
+  }
+  public class func marker(withPosition position: _LocationEssentials.CLLocationCoordinate2D) -> iNaviGlobalMapSDK.IgmMarker
+  public class func marker(withIconImage iconImage: iNaviGlobalMapSDK.IgmImage) -> iNaviGlobalMapSDK.IgmMarker
+  public class func marker(withPosition position: _LocationEssentials.CLLocationCoordinate2D, iconImage: iNaviGlobalMapSDK.IgmImage) -> iNaviGlobalMapSDK.IgmMarker
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol IgmMarkerOptions : iNaviGlobalMapSDK.IgmShapeOptions {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc var iconImage: iNaviGlobalMapSDK.IgmImage? { get set }
+  #endif
+  @objc var iconScale: CoreFoundation.CGFloat { get set }
+  @objc var title: Swift.String { get set }
+  @objc var isAllowOverlapMarkers: Swift.Bool { get set }
+  @objc var isAllowOverlapTitle: Swift.Bool { get set }
+  @objc var isIconFlat: Swift.Bool { get set }
+  @objc var isTitleFlat: Swift.Bool { get set }
+  @objc var position: _LocationEssentials.CLLocationCoordinate2D { get set }
+  @objc var alpha: CoreFoundation.CGFloat { get set }
+  @objc var titleColor: UIKit.UIColor { get set }
+  @objc var titleHaloColor: UIKit.UIColor { get set }
+  @objc var titleSize: CoreFoundation.CGFloat { get set }
+  @objc var titleMaxWidth: CoreFoundation.CGFloat { get set }
+  @objc var titleMargin: CoreFoundation.CGFloat { get set }
+  @objc var angle: CoreFoundation.CGFloat { get set }
+  @objc var anchor: CoreFoundation.CGPoint { get set }
+}
+@_hasMissingDesignatedInitializers public class IgmMarkerOptionsImpl : iNaviGlobalMapSDK.IgmMarkerOptions {
+  public var marker: iNaviGlobalMapSDK.IgmMarker
+  public init(marker: iNaviGlobalMapSDK.IgmMarker)
+  public init(resetMarker marker: iNaviGlobalMapSDK.IgmMarker)
+  @objc public var userInfo: [Swift.String : Any] {
+    @objc get
+    @objc set
+  }
+  @objc public var identifier: Swift.String {
+    @objc get
+  }
+  @objc public var zIndex: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc public var globalZIndex: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc public var visibleMinZoom: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc public var visibleMaxZoom: Swift.Double {
+    @objc get
+    @objc set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var iconImage: iNaviGlobalMapSDK.IgmImage? {
+    @objc get
+    @objc set
+  }
+  #endif
+  @objc public var iconScale: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var title: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc public var isAllowOverlapMarkers: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var isAllowOverlapTitle: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var isIconFlat: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var isTitleFlat: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public var position: _LocationEssentials.CLLocationCoordinate2D {
+    @objc get
+    @objc set
+  }
+  @objc public var alpha: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var titleColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc public var titleHaloColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc public var titleSize: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var titleMaxWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var titleMargin: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var angle: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var anchor: CoreFoundation.CGPoint {
+    @objc get
+    @objc set
+  }
+  @objc deinit
+}
+@objc public class IgmPolygon : iNaviGlobalMapSDK.IgmShape {
+  public var fillColor: UIKit.UIColor {
+    get
+    set
+  }
+  public var strokeWidth: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  public var strokeColor: UIKit.UIColor {
+    get
+    set
+  }
+  public var coords: [_LocationEssentials.CLLocationCoordinate2D] {
+    get
+    set
+  }
+  convenience public init(coords: [_LocationEssentials.CLLocationCoordinate2D], fillColor: UIKit.UIColor)
+  required public init(coords: [_LocationEssentials.CLLocationCoordinate2D])
+  @objc deinit
+}
+@objc public class IgmPolyline : iNaviGlobalMapSDK.IgmShape {
+  public var width: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  public var color: UIKit.UIColor {
+    get
+    set
+  }
+  public var capType: iNaviGlobalMapSDK.IgmLineCap {
+    get
+    set
+  }
+  public var joinType: iNaviGlobalMapSDK.IgmLineJoin {
+    get
+    set
+  }
+  public var pattern: [CoreFoundation.CGFloat] {
+    get
+    set
+  }
+  public var coords: [_LocationEssentials.CLLocationCoordinate2D] {
+    get
+    set
+  }
+  required public init(coords: [_LocationEssentials.CLLocationCoordinate2D])
+  @objc deinit
+}
+public typealias IgmShapeTouchEvent = (_ shape: iNaviGlobalMapSDK.IgmShape) -> Swift.Bool
+public enum IgmLineJoin : Swift.UInt {
+  case bevel
+  case round
+  case miter
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.UInt)
+  #endif
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+public enum IgmLineCap : Swift.UInt {
+  case butt
+  case round
+  case square
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.UInt)
+  #endif
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class IgmShape : ObjectiveC.NSObject, iNaviGlobalMapSDK.IgmShapeOptions {
+  @objc public var identifier: Swift.String {
+    get
+  }
+  @objc public var userInfo: [Swift.String : Any]
+  weak public var mapView: iNaviGlobalMapSDK.IgmMapView? {
+    get
+    set
+  }
+  @objc public var zIndex: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc public var globalZIndex: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc public var visibleMinZoom: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc public var visibleMaxZoom: Swift.Double {
+    @objc get
+    @objc set
+  }
+  public var isVisible: Swift.Bool {
+    get
+    set
+  }
+  public var isAttached: Swift.Bool {
+    get
+  }
+  public var touchEvent: iNaviGlobalMapSDK.IgmShapeTouchEvent?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol IgmImageDataSource : AnyObject {
+}
+public protocol IgmImageViewDataSource : iNaviGlobalMapSDK.IgmImageDataSource {
+  func view(with shape: iNaviGlobalMapSDK.IgmShape) -> UIKit.UIView
+}
+public protocol IgmImageTextDataSource : iNaviGlobalMapSDK.IgmImageDataSource {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func title(with shape: iNaviGlobalMapSDK.IgmShape) -> Swift.String?
+  #endif
+}
+@objc public protocol IgmShapeOptions {
+  @objc var identifier: Swift.String { get }
+  @objc var userInfo: [Swift.String : Any] { get set }
+  @objc var zIndex: Swift.Int { get set }
+  @objc var globalZIndex: Swift.Int { get set }
+  @objc var visibleMinZoom: Swift.Double { get set }
+  @objc var visibleMaxZoom: Swift.Double { get set }
+}
+@objc public protocol IgmCluster {
+  @objc var position: _LocationEssentials.CLLocationCoordinate2D { get }
+  @objc var count: Swift.UInt { get }
+  @objc var items: [any iNaviGlobalMapSDK.IgmClusterItem] { get }
+}
+public protocol IgmClusterIconGenerator : ObjectiveC.NSObject {
+  func icon(forCount count: Swift.Int) -> iNaviGlobalMapSDK.IgmImage
+}
+@objc public protocol IgmClusterItem : ObjectiveC.NSObjectProtocol {
+  @objc var position: _LocationEssentials.CLLocationCoordinate2D { get }
+}
+@objc public class IgmClusterManager : ObjectiveC.NSObject, iNaviGlobalMapSDK.IgmMapDelegate {
+  public var clusterIconGenerator: any iNaviGlobalMapSDK.IgmClusterIconGenerator
+  weak public var delegate: (any iNaviGlobalMapSDK.IgmClusterManagerDelegate)?
+  public init(mapView: iNaviGlobalMapSDK.IgmMapView)
+  @objc deinit
+  public func addItem(_ item: any iNaviGlobalMapSDK.IgmClusterItem)
+  public func addItems(_ items: [any iNaviGlobalMapSDK.IgmClusterItem])
+  public func removeItem(_ item: any iNaviGlobalMapSDK.IgmClusterItem)
+  public func removeItems(_ items: [any iNaviGlobalMapSDK.IgmClusterItem])
+  public func clearItems()
+  public func Igmalidate()
+  @objc public func mapView(_ mapView: iNaviGlobalMapSDK.IgmMapView, regionIsChangingWithReason reason: iNaviGlobalMapSDK.IgmCameraUpdateReason)
+}
+@objc public protocol IgmClusterManagerDelegate {
+  @objc optional func clusterManager(_ clusterManager: iNaviGlobalMapSDK.IgmClusterManager, willRenderCluster cluster: any iNaviGlobalMapSDK.IgmCluster, with markerOptions: any iNaviGlobalMapSDK.IgmMarkerOptions)
+  @objc optional func clusterManager(_ clusterManager: iNaviGlobalMapSDK.IgmClusterManager, willRenderClusterItem clusterItem: any iNaviGlobalMapSDK.IgmClusterItem, with markerOptions: any iNaviGlobalMapSDK.IgmMarkerOptions)
+  @objc optional func clusterManager(_ clusterManager: iNaviGlobalMapSDK.IgmClusterManager, didTapCluster cluster: any iNaviGlobalMapSDK.IgmCluster, with markerOptions: any iNaviGlobalMapSDK.IgmMarkerOptions) -> Swift.Bool
+  @objc optional func clusterManager(_ clusterManager: iNaviGlobalMapSDK.IgmClusterManager, didTapClusterItem clusterItem: any iNaviGlobalMapSDK.IgmClusterItem, with markerOptions: any iNaviGlobalMapSDK.IgmMarkerOptions) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class IgmDefaultClusterIconGenerator : ObjectiveC.NSObject, iNaviGlobalMapSDK.IgmClusterIconGenerator {
+  convenience public init(colors: [UIKit.UIColor], criteria: [Swift.UInt])
+  convenience public init(images: [UIKit.UIImage], criteria: [Swift.UInt])
+  final public func icon(forCount count: Swift.Int) -> iNaviGlobalMapSDK.IgmImage
+  @objc deinit
+}
+public struct MapProjection {
+  public static func project(_ latLng: _LocationEssentials.CLLocationCoordinate2D, worldSize: Swift.Double) -> CoreFoundation.CGPoint
+}
+extension ObjectiveC.NSObject {
+  public class var className: Swift.String {
+    get
+  }
+}
+extension _LocationEssentials.CLLocationCoordinate2D : @retroactive Swift.Equatable {
+  public static func == (lhs: _LocationEssentials.CLLocationCoordinate2D, rhs: _LocationEssentials.CLLocationCoordinate2D) -> Swift.Bool
+}
+extension _LocationEssentials.CLLocationCoordinate2D : @retroactive Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public func snapShotImage() -> UIKit.UIImage?
+  #endif
+}
+@objc public class IgmCameraPosition : ObjectiveC.NSObject {
+  final public let target: _LocationEssentials.CLLocationCoordinate2D
+  final public let zoom: Swift.Double
+  final public let tilt: Swift.Double
+  final public let bearing: Swift.Double
+  public init(target: _LocationEssentials.CLLocationCoordinate2D, zoom: Swift.Double, tilt: Swift.Double, bearing: Swift.Double)
+  public static func cameraPosition(_ target: _LocationEssentials.CLLocationCoordinate2D, zoom: Swift.Double, tilt: Swift.Double, bearing: Swift.Double) -> iNaviGlobalMapSDK.IgmCameraPosition
+  public static func cameraPosition(_ target: _LocationEssentials.CLLocationCoordinate2D, zoom: Swift.Double) -> iNaviGlobalMapSDK.IgmCameraPosition
+  @objc deinit
+}
+public enum IgmCameraUpdateAnimation : Swift.UInt {
+  case none
+  case linear
+  case easeIn
+  case easeOut
+  case fly
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.UInt)
+  #endif
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class IgmCameraUpdate {
+  public var animation: iNaviGlobalMapSDK.IgmCameraUpdateAnimation
+  public var animationDuration: Swift.Double
+  public static func cameraUpdate(params: iNaviGlobalMapSDK.IgmCameraUpdateParams) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(position: iNaviGlobalMapSDK.IgmCameraPosition) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(targetTo target: _LocationEssentials.CLLocationCoordinate2D) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(targetTo target: _LocationEssentials.CLLocationCoordinate2D, zoomTo zoom: Swift.Double) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdateZoomIn() -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdateZoomOut() -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(zoomTo zoom: Swift.Double) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(zoomBy delta: Swift.Double) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(tiltTo tilt: Swift.Double) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(bearingTo bearing: Swift.Double) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(fitBounds bounds: iNaviGlobalMapSDK.IgmLatLngBounds) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(fitBounds bounds: iNaviGlobalMapSDK.IgmLatLngBounds, padding: CoreFoundation.CGFloat) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  public static func cameraUpdate(fitBounds bounds: iNaviGlobalMapSDK.IgmLatLngBounds, paddingInsets: UIKit.UIEdgeInsets) -> iNaviGlobalMapSDK.IgmCameraUpdate
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class IgmCameraUpdateParams {
+  public static func cameraUpdateParams() -> iNaviGlobalMapSDK.IgmCameraUpdateParams
+  public func targetTo(_ target: _LocationEssentials.CLLocationCoordinate2D)
+  public func targetBy(_ delta: CoreFoundation.CGPoint)
+  public func zoomTo(_ zoom: Swift.Double)
+  public func zoomBy(_ delta: Swift.Double)
+  public func zoomIn()
+  public func zoomOut()
+  public func tiltTo(_ tilt: Swift.Double)
+  public func tiltBy(_ delta: Swift.Double)
+  public func bearingTo(_ bearing: Swift.Double)
+  public func bearingBy(_ delta: Swift.Double)
+  @objc deinit
+}
+final public class IgmKatec {
+  final public var x: Swift.Double
+  final public var y: Swift.Double
+  public init(x: Swift.Double, y: Swift.Double)
+  public init(latLng: _LocationEssentials.CLLocationCoordinate2D)
+  final public func toLatLng() -> _LocationEssentials.CLLocationCoordinate2D
+  @objc deinit
+}
+final public class IgmTm {
+  final public var x: Swift.Double
+  final public var y: Swift.Double
+  public init(x: Swift.Double, y: Swift.Double)
+  public init(latLng: _LocationEssentials.CLLocationCoordinate2D)
+  final public func toLatLng() -> _LocationEssentials.CLLocationCoordinate2D
+  @objc deinit
+}
+final public class IgmGrs80 {
+  final public var x: Swift.Double
+  final public var y: Swift.Double
+  public init(x: Swift.Double, y: Swift.Double)
+  public init(latLng: _LocationEssentials.CLLocationCoordinate2D)
+  final public func toLatLng() -> _LocationEssentials.CLLocationCoordinate2D
+  @objc deinit
+}
+final public class IgmUtmk {
+  final public var x: Swift.Double
+  final public var y: Swift.Double
+  public init(x: Swift.Double, y: Swift.Double)
+  public init(latLng: _LocationEssentials.CLLocationCoordinate2D)
+  final public func toLatLng() -> _LocationEssentials.CLLocationCoordinate2D
+  @objc deinit
+}
+@objc public class IgmLatLngBounds : ObjectiveC.NSObject {
+  public var southWest: _LocationEssentials.CLLocationCoordinate2D {
+    get
+  }
+  public var northEast: _LocationEssentials.CLLocationCoordinate2D {
+    get
+  }
+  public var southEast: _LocationEssentials.CLLocationCoordinate2D {
+    get
+  }
+  public var northWest: _LocationEssentials.CLLocationCoordinate2D {
+    get
+  }
+  public var center: _LocationEssentials.CLLocationCoordinate2D {
+    get
+  }
+  public init(southWest: _LocationEssentials.CLLocationCoordinate2D, northEast: _LocationEssentials.CLLocationCoordinate2D)
+  public static func bounds(southWest: _LocationEssentials.CLLocationCoordinate2D, northEast: _LocationEssentials.CLLocationCoordinate2D) -> iNaviGlobalMapSDK.IgmLatLngBounds
+  public static func bounds(coords: [_LocationEssentials.CLLocationCoordinate2D]) -> iNaviGlobalMapSDK.IgmLatLngBounds
+  public func contains(_ latLng: _LocationEssentials.CLLocationCoordinate2D) -> Swift.Bool
+  public func contains(_ bounds: iNaviGlobalMapSDK.IgmLatLngBounds) -> Swift.Bool
+  @objc deinit
+}
+@objc public protocol IgmMapDelegate {
+  @objc optional func mapView(_ mapView: iNaviGlobalMapSDK.IgmMapView, regionWillChangeAnimated animated: Swift.Bool, reason: iNaviGlobalMapSDK.IgmCameraUpdateReason)
+  @objc optional func mapView(_ mapView: iNaviGlobalMapSDK.IgmMapView, regionIsChangingWithReason reason: iNaviGlobalMapSDK.IgmCameraUpdateReason)
+  @objc optional func mapView(_ mapView: iNaviGlobalMapSDK.IgmMapView, regionDidChangeAnimated animated: Swift.Bool, reason: iNaviGlobalMapSDK.IgmCameraUpdateReason)
+  @objc optional func didTapMapView(_ point: CoreFoundation.CGPoint, latLng: _LocationEssentials.CLLocationCoordinate2D)
+  @objc optional func didLongTapMapView(_ point: CoreFoundation.CGPoint, latLng: _LocationEssentials.CLLocationCoordinate2D)
+  @objc optional func mapViewDidBecomeIdle(_ mapView: iNaviGlobalMapSDK.IgmMapView)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc optional func mapView(_ mapView: iNaviGlobalMapSDK.IgmMapView, didUpdateUserLocation userLocation: _LocationEssentials.CLLocation?)
+  #endif
+}
+@objc public enum IgmUserTrackingMode : Swift.UInt {
+  case none = 0
+  case noTracking
+  case tracking
+  case trackingCompass
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.UInt)
+  #endif
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+@objc public enum IgmPosition : Swift.UInt {
+  case topLeft = 0
+  case topRight
+  case bottomLeft
+  case bottomRight
+  case yCenterRight
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.UInt)
+  #endif
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+@objc public enum IgmMapType : Swift.Int {
+  case normal = 0
+  case hybrid
+  case satellite
+  case normalWithHillshade
+  case hybridWithHillshade
+  case satelliteWithHillshade
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum IgmCameraUpdateReason : Swift.Int {
+  case none = 0
+  case gesture = -1
+  case control = -2
+  case locationChanged = -3
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class IgmMapOptions {
+  public var camera: iNaviGlobalMapSDK.IgmCameraPosition?
+  public var isScaleBarVisible: Swift.Bool
+  public var isCompassVisible: Swift.Bool
+  public var isZoomControlVisible: Swift.Bool
+  public var isLocationButtonVisible: Swift.Bool
+  public var isLogoVisible: Swift.Bool
+  public var minimumZoomLevel: Swift.Double
+  public var maximumZoomLevel: Swift.Double
+  public var minimumTilt: Swift.Double
+  public var maximumTilt: Swift.Double
+  public var isZoomGesturesEnabled: Swift.Bool
+  @objc dynamic public var isScrollGesturesEnabled: Swift.Bool
+  @objc dynamic public var isRotateGesturesEnabled: Swift.Bool
+  @objc dynamic public var isTiltGesturesEnabled: Swift.Bool
+  convenience public init(camera: iNaviGlobalMapSDK.IgmCameraPosition)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(camera: iNaviGlobalMapSDK.IgmCameraPosition? = nil, isScaleBarVisible: Swift.Bool = true, isCompassVisible: Swift.Bool = true, isZoomControlVisible: Swift.Bool = false, isLocationButtonVisible: Swift.Bool = false, isLogoVisible: Swift.Bool = true, minimumZoomLevel: Swift.Double = 1.0, maximumZoomLevel: Swift.Double = 20.0, minimumTilt: Swift.Double = 0.0, maximumTilt: Swift.Double = 60.0, isZoomGesturesEnabled: Swift.Bool = true, isScrollGesturesEnabled: Swift.Bool = true, isRotateGesturesEnabled: Swift.Bool = true, isTiltGesturesEnabled: Swift.Bool = true, mapType: iNaviGlobalMapSDK.IgmMapType = .normal)
+  #endif
+  @objc deinit
+}
+@objc public protocol IgmMapSdkDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc optional func authResultCode(_ resultCode: Swift.Int, message: Swift.String?)
+  #endif
+}
+@_hasMissingDesignatedInitializers public class IgmProjection {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func latlng(point: CoreFoundation.CGPoint) -> _LocationEssentials.CLLocationCoordinate2D?
+  #endif
+  public func point(coord: _LocationEssentials.CLLocationCoordinate2D) -> CoreFoundation.CGPoint
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func latlngBounds(viewBounds: CoreFoundation.CGRect) -> iNaviGlobalMapSDK.IgmLatLngBounds?
+  #endif
+  public func viewBounds(from latlngBounds: iNaviGlobalMapSDK.IgmLatLngBounds) -> CoreFoundation.CGRect
+  public var metersPerPixel: Swift.Double {
+    get
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor @preconcurrency public class IgmMapView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any iNaviGlobalMapSDK.IgmMapDelegate)?
+  @_Concurrency.MainActor @preconcurrency public var locationIcon: iNaviGlobalMapSDK.IgmLocationIcon {
+    get
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var latitude: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var longitude: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var zoomLevel: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var minimumZoomLevel: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var maximumZoomLevel: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var minimumTilt: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var maximumTilt: Swift.Double {
+    @objc get
+    @objc set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public var constraintBounds: iNaviGlobalMapSDK.IgmLatLngBounds? {
+    get
+    set
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public var cameraPosition: iNaviGlobalMapSDK.IgmCameraPosition? {
+    get
+    set
+  }
+  #endif
+  @_Concurrency.MainActor @preconcurrency public var projection: iNaviGlobalMapSDK.IgmProjection {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public var contentInset: UIKit.UIEdgeInsets {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var userTrackingMode: iNaviGlobalMapSDK.IgmUserTrackingMode {
+    get
+    set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public var contentBounds: iNaviGlobalMapSDK.IgmLatLngBounds? {
+    get
+  }
+  #endif
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isScaleBarVisible: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isCompassVisible: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isZoomControlVisible: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isLocationButtonVisible: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isLogoVisible: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isZoomGesturesEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isScrollGesturesEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isRotateGesturesEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isTiltGesturesEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var isLogoClickEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency public var decelerationRate: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, options: iNaviGlobalMapSDK.IgmMapOptions?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, options: iNaviGlobalMapSDK.IgmMapOptions?, delegate: (any iNaviGlobalMapSDK.IgmMapDelegate)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func safeAreaInsetsDidChange()
+  @objc deinit
+}
+extension iNaviGlobalMapSDK.IgmMapView {
+  @_Concurrency.MainActor @preconcurrency public func moveCamera(_ cameraUpdate: iNaviGlobalMapSDK.IgmCameraUpdate)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public func moveCamera(_ cameraUpdate: iNaviGlobalMapSDK.IgmCameraUpdate, completion: (() -> Swift.Void)? = nil)
+  #endif
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class IGMService : ObjectiveC.NSObject {
+  public static let shared: iNaviGlobalMapSDK.IGMService
+  public var appKey: Swift.String?
+  weak public var delegate: (any iNaviGlobalMapSDK.IgmMapSdkDelegate)?
+  @objc deinit
+}
+extension iNaviGlobalMapSDK.IgmLineJoin : Swift.Equatable {}
+extension iNaviGlobalMapSDK.IgmLineJoin : Swift.Hashable {}
+extension iNaviGlobalMapSDK.IgmLineJoin : Swift.RawRepresentable {}
+extension iNaviGlobalMapSDK.IgmLineCap : Swift.Equatable {}
+extension iNaviGlobalMapSDK.IgmLineCap : Swift.Hashable {}
+extension iNaviGlobalMapSDK.IgmLineCap : Swift.RawRepresentable {}
+extension iNaviGlobalMapSDK.IgmCameraUpdateAnimation : Swift.Equatable {}
+extension iNaviGlobalMapSDK.IgmCameraUpdateAnimation : Swift.Hashable {}
+extension iNaviGlobalMapSDK.IgmCameraUpdateAnimation : Swift.RawRepresentable {}
+extension iNaviGlobalMapSDK.IgmUserTrackingMode : Swift.Equatable {}
+extension iNaviGlobalMapSDK.IgmUserTrackingMode : Swift.Hashable {}
+extension iNaviGlobalMapSDK.IgmUserTrackingMode : Swift.RawRepresentable {}
+extension iNaviGlobalMapSDK.IgmPosition : Swift.Equatable {}
+extension iNaviGlobalMapSDK.IgmPosition : Swift.Hashable {}
+extension iNaviGlobalMapSDK.IgmPosition : Swift.RawRepresentable {}
+extension iNaviGlobalMapSDK.IgmMapType : Swift.Equatable {}
+extension iNaviGlobalMapSDK.IgmMapType : Swift.Hashable {}
+extension iNaviGlobalMapSDK.IgmMapType : Swift.RawRepresentable {}
+extension iNaviGlobalMapSDK.IgmCameraUpdateReason : Swift.Equatable {}
+extension iNaviGlobalMapSDK.IgmCameraUpdateReason : Swift.Hashable {}
+extension iNaviGlobalMapSDK.IgmCameraUpdateReason : Swift.RawRepresentable {}
